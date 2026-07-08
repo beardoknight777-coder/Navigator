@@ -6,6 +6,7 @@
 # Mission: Personal AI Command Console
 # Motto: "For the King."
 # ============================================
+from modules.menu import show_menu
 import subprocess
 from datetime import datetime
 import os
@@ -31,14 +32,7 @@ models = {
 os.makedirs("logs", exist_ok=True)
 
 while True:
-    print("\n" + "=" * 40)
-    print("          MISSION SELECTION")
-    print("=" * 40)
-    print("1 - Llama")
-    print("2 - DeepSeek")
-    print("3 - Gemma")
-    print("4 - Qwen")
-    print("5 - Exit")
+    show_menu()
 
     choice = input("\nSelect mission: ")
 
