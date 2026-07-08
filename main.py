@@ -7,7 +7,7 @@
 # Motto: "For the King."
 # ============================================
 from modules.menu import show_menu
-import subprocess
+from modules.ai import run_ai
 from datetime import datetime
 import os
 print("=" * 45)
@@ -53,12 +53,4 @@ while True:
         log.write(f"Model        : {models[choice]}\n")
         log.write(f"Question     : {prompt}\n\n")
 
-    print("\n--- Response ---\n")
-    print("DEBUG: About to run Ollama...")
-
-    subprocess.run([
-        "ollama",
-        "run",
-        models[choice],
-        prompt
-    ])
+    run_ai(models[choice], prompt)
