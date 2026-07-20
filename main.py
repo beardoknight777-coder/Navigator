@@ -6,6 +6,7 @@
 # Mission: Personal AI Command Console
 # Motto: "For the King."
 # ============================================
+from modules.models import get_models
 from modules.menu import show_menu
 from modules.ai import run_ai
 from datetime import datetime
@@ -22,12 +23,7 @@ print("Mission Control Online.")
 print("Mission Time:",datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
 print()
 
-models = {
-    "1": "llama3.2:3b",
-    "2": "deepseek-r1:7b",
-    "3": "gemma3:4b",
-    "4": "qwen3:4b"
-}
+models = get_models()
 
 # Create logs folder if it dosen't exist 
 os.makedirs("logs", exist_ok=True)
